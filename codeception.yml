@@ -1,0 +1,15 @@
+namespace: "App\\Tests\\Integration"
+support_namespace: Support
+paths:
+    tests: tests/Integration
+    output: var/codeception/_output
+    data: tests/Integration/_data
+    support: tests/Integration/_support
+actor_suffix: Tester
+extensions:
+    enabled:
+        - Codeception\Extension\RunFailed
+settings:
+    shuffle: false
+    lint: true
+

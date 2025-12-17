@@ -1,0 +1,7 @@
+controllers:
+    resource: routing.controllers
+
+nelmio_api_doc_swagger_ui:
+    path: /api/doc
+    controller: nelmio_api_doc.controller.swagger_ui
+    methods: [GET]
