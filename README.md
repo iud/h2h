@@ -7,21 +7,21 @@ API do obsługi formularza kontaktowego - Symfony 7 + PostgreSQL.
 ### Z Dockerem
 
 ```bash
-# Sklonuj repo
+# Klonowanie repozytorium
 git clone https://github.com/iud/h2h.git
 cd h2h
 
-# Uruchom kontenery
+# Uruchomienie kontenerów
 docker compose up -d
 
-# Zainstaluj zależności
+# Instalacja zależności
 docker compose run --rm php composer install
 
-# Stwórz bazę i uruchom migracje
+# Utworzenie bazy i wykonanie migracji
 docker compose run --rm php php bin/console doctrine:database:create --if-not-exists
 docker compose run --rm php php bin/console doctrine:migrations:migrate --no-interaction
 
-# Uruchom serwer
+# Uruchomienie serwera
 docker compose run --rm -p 8000:8000 php php -S 0.0.0.0:8000 -t public
 ```
 
@@ -35,21 +35,21 @@ Wymagania:
 - PostgreSQL 16+
 
 ```bash
-# Sklonuj repo
+# Klonowanie repozytorium
 git clone https://github.com/iud/h2h.git
 cd h2h
 
-# Zainstaluj zależności
+# Instalacja zależności
 composer install
 
-# Ustaw bazę w .env.local
+# Konfiguracja bazy w .env.local
 DATABASE_URL="postgresql://user:pass@127.0.0.1:5432/contact_form_db?serverVersion=16&charset=utf8"
 
-# Stwórz bazę i migracje
+# Utworzenie bazy i wykonanie migracji
 php bin/console doctrine:database:create --if-not-exists
 php bin/console doctrine:migrations:migrate --no-interaction
 
-# Uruchom serwer
+# Uruchomienie serwera
 php -S localhost:8000 -t public
 ```
 
@@ -99,7 +99,7 @@ Query params:
 Odpowiedź:
 ```json
 {
-  "items": [...],
+  "items": [],
   "meta": {
     "page": 1,
     "limit": 20,
@@ -122,14 +122,14 @@ Dwa typy testów:
 ### Z Dockerem
 
 ```bash
-# Przygotuj bazę testową
+# Przygotowanie bazy testowej
 docker compose run --rm php php bin/console doctrine:database:create --env=test --if-not-exists
 docker compose run --rm php php bin/console doctrine:migrations:migrate --env=test --no-interaction
 
-# PHPUnit
+# Uruchomienie testów PHPUnit
 docker compose run --rm php php bin/phpunit
 
-# Codeception
+# Uruchomienie testów Codeception
 docker compose run --rm php vendor/bin/codecept run
 ```
 

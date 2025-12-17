@@ -59,6 +59,11 @@ final class ContactMessageCreatorTest extends TestCase
         $dto->message = 'Test message content';
         $dto->consent = true;
 
+        $this->contactMessageRepositoryMock
+            ->expects($this->once())
+            ->method('save')
+            ->with($this->isInstanceOf(ContactMessage::class), true);
+
         $result = $this->creator->create($dto);
 
         $this->assertInstanceOf(\DateTimeImmutable::class, $result->getCreatedAt());
