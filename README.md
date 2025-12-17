@@ -2,6 +2,18 @@
 
 API do obsługi formularza kontaktowego - Symfony 7 + PostgreSQL.
 
+## Komentarz
+Bez dokładnej znajomości stylu pracy firmy oraz dostępnego czasu (podano mi 5h) ciężko jest wyśrodkować ilość
+włożonej pracy tak, by nie zrobić overkilla oraz nie zrobić rzeczy zbyt prosto. 
+
+Co można zrobić prościej?
+1. Nie wydzielać `ContactMessageCreator.php` z kontrolera
+2. Nie pisać tylu tekstu w DTO do walidacji, a moze zamiast DTO od razu mapować na encję
+3. Pisać więcej po angielsku (umyślnie na potrzeby rekrutacji)
+4. Nie dodawac nawet prostego dockera na testy
+5. Nie uzywac phpcbf/phpstan - ale to kwestia przyzwyczajenia
+6. Zrobić dużo prostszy opis OpenApi
+
 ## Jak postawić
 
 ### Z Dockerem
