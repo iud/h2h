@@ -85,9 +85,17 @@ class ContactController extends AbstractController
                             items: new OA\Items(
                                 properties: [
                                     new OA\Property(property: 'propertyPath', type: 'string', example: 'fullName'),
-                                    new OA\Property(property: 'title', type: 'string', example: 'Imię i nazwisko jest wymagane.'),
+                                    new OA\Property(
+                                        property: 'title',
+                                        type: 'string',
+                                        example: 'Imię i nazwisko jest wymagane.'
+                                    ),
                                     new OA\Property(property: 'parameters', type: 'object'),
-                                    new OA\Property(property: 'type', type: 'string', example: 'urn:uuid:c1051bb4-d103-4f74-8988-acbcafc7f831'),
+                                    new OA\Property(
+                                        property: 'type',
+                                        type: 'string',
+                                        example: 'urn:uuid:c1051bb4-d103-4f74-8988-acbcafc7f831'
+                                    ),
                                 ]
                             ),
                             example: [
